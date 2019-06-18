@@ -8,6 +8,4 @@ class App {
   }
 }
 
-window.app = new App()
-
-app.controllers.gameController.init();
+window["app"] = new App()

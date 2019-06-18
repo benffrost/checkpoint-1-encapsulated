@@ -31,26 +31,33 @@
 
     </div>
     <div class="row">
-      <div class="col"><button class="btn btn-primary m-2 btn-block" onClick="slap()">Slap</button></div>
-      <div class="col"><button class="btn btn-primary m-2 btn-block" onClick="punch()">Punch</button></div>
-      <div class="col"><button class="btn btn-primary m-2 btn-block" onClick="kick()">Kick</button></div>
+      <div class="col"><button class="btn btn-primary m-2 btn-block"
+          onClick="app.controllers.gameController.attackTarget('slap')">Slap</button></div>
+      <div class="col"><button class="btn btn-primary m-2 btn-block"
+          onClick="app.controllers.gameController.attackTarget('punch')">Punch</button></div>
+      <div class="col"><button class="btn btn-primary m-2 btn-block"
+          onClick="app.controllers.gameController.attackTarget('kick')">Kick</button></div>
     </div>
     <div class="row" id="items">
-      <div class="col"><button class="btn btn-info m-2 btn-block" onClick="giveItem('cleats')">Cleats</button></div>
-      <div class="col"><button class="btn btn-info m-2 btn-block" onClick="giveItem('boomerang')">Boomerang</button>
+      <div class="col"><button class="btn btn-info m-2 btn-block"
+          onClick="app.controllers.gameController.addItemToTarget('cleats')">Cleats</button></div>
+      <div class="col"><button class="btn btn-info m-2 btn-block"
+          onClick="app.controllers.gameController.addItemToTarget('boomerang')">Boomerang</button>
       </div>
-      <div class="col"><button class="btn btn-info m-2 btn-block" onClick="giveItem('sword')">Sword</button></div>
+      <div class="col"><button class="btn btn-info m-2 btn-block"
+          onClick="app.controllers.gameController.addItemToTarget('sword')">Sword</button></div>
     </div>
     <div class="row">
       <div class="col-4"></div>
-      <div class="col"><button class="btn btn-danger btn-block m-2" onClick="resetGame()">Reset Game</button></div>
+      <div class="col"><button class="btn btn-danger btn-block m-2"
+          onClick="app.controllers.gameController.resetGame()">Reset Game</button></div>
       <div class="col-4"></div>
     </div>
   </div>
 
 
 
-  <script src="game.js"></script>
+  <script src="app/main.js" type="module"></script>
 </body>
 
 </html>

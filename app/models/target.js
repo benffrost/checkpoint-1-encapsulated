@@ -1,13 +1,8 @@
 export default class Target {
-  constructor(name, health, slap, punch, kick) {
+  constructor(name, health, items) {
     this.name = name;
     this.health = health;
-    this.attacks = {
-      "slap": slap,
-      "punch": punch,
-      "kick": kick
-    }
-    this.items = [];
+    this.items = items;
     this.hits = 0;
   }
 }

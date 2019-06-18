@@ -4,31 +4,31 @@ let _gameService = new GameService()
 
 function draw() {
   let target = _gameService.Target
-  let template = `
-  <div class="card">
-      <h2>${target.name}</h2>
-      <h4>Health: ${target.health}</h4>
-  </div>
-  `
-  document.querySelector("#main").innerHTML = template;
-  //you will need to modify your template string to be whatever you want and then set it as the innerHTML 
-  //of an element on the DOM
+
+
+  document.querySelector("#name").innerHTML = `${target.name}`
+  document.querySelector("#health").innerHTML = `${target.health > 0 ? target.health : "Dead"}`
+  document.querySelector("#hits").innerHTML = `${target.hits}`
 }
 
 //any other private functions you may want
 
 export default class GameController {
-  constructor() { }
+  constructor() { draw(); }
 
-  addItemToTarget(itemIndex) {
-    _gameService.addItemToTarget(itemIndex)
+  addItemToTarget(itemName) {
+    _gameService.addItemToTarget(itemName)
   }
 
   attackTarget(attackName) {
     _gameService.attackTarget(attackName)
-    draw()
+    draw();
   }
 
-  init() { draw() }
+  resetGame() {
+    _gameService.resetGame()
+    draw();
+  }
+
   //any other public methods you may want
 }
